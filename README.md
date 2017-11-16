@@ -3,7 +3,7 @@ This program contains sample codes for parallelly writing 2D/3D mesh field data 
 
 # Compile the Code
 
-The makefile is setup to use gcc and gfortran with MPI. The HDF5-Parallel library (version 1.8.13) is also required for compiling the code. 
+The makefile is set to use gcc and gfortran with MPI. The HDF5-Parallel library (version 1.8.13) is also required for compiling the code. 
 
 To compile the programs, execute:
 
