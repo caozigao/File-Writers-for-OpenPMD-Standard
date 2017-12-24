@@ -791,7 +791,6 @@
          real, intent(in) :: value
          integer, intent(inout) :: ierr
 ! local data
-         integer :: color, pgrp, pid, pnvp
          integer(hsize_t), dimension(1) :: ldim
          integer(hid_t) :: treal
          integer(hid_t) :: flplID, xferID
@@ -811,7 +810,7 @@
          call h5pcreate_f(H5P_FILE_ACCESS_F, flplID, ierr)         
          call h5pcreate_f(H5P_DATASET_XFER_F, xferID, ierr)  
          info = MPI_INFO_NULL
-         call h5pset_fapl_mpio_f(flplID, pgrp, info, ierr)
+         call h5pset_fapl_mpio_f(flplID, pp%getlworld(), info, ierr)
          call h5pset_dxpl_mpio_f(xferID, H5FD_MPIO_COLLECTIVE_F, ierr)    
          call h5fopen_f(trim(file%filename), H5F_ACC_RDWR_F, file_id, ierr,&
          &access_prp=flplID) 
